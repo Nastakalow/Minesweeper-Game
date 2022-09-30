@@ -1,7 +1,7 @@
 # Minesweeper
 
 
-This is a small but cute minesweeper project. 😊
+This is a simple but cute minesweeper project. 😊
 
 coming soon...
 
