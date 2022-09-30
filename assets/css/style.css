@@ -1,0 +1,90 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #40916c;
+  font-family: "Iceland", cursive;
+}
+
+.container {
+  width: 37.5rem;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.game-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-info h1 {
+  font-size: 6.2rem;
+  color: #fff;
+}
+
+.refresh-icon {
+  font-size: 3.6rem;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  background: #2d6a4f;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#boxes .box {
+  border: 1px solid #fff;
+  width: 7.5rem;
+  height: 7.5rem;
+}
+
+.switch {
+  width: 15rem;
+  height: 7rem;
+  background: #59c9a5;
+  border-radius: 5rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+.switch div {
+  margin: auto 0;
+  width: 6.7rem;
+  height: 6.7rem;
+  border-radius: 5rem;
+  padding: 1.1rem;
+  transition: all 0.5s ease-out;
+}
+.switch div.active {
+  background-color: #fff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.switch div.active .mine {
+  fill: #d90429;
+}
+
+.switch div.active .flag {
+  fill: #4361ee;
+}
