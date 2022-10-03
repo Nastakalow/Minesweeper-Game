@@ -36,55 +36,72 @@ body {
   color: #fff;
 }
 
-.refresh-icon {
-  font-size: 3.6rem;
+#reset-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.reset-icon {
+  font-size: 4rem;
+  cursor: pointer;
+  color: #000022;
 }
 
 #boxes {
   display: flex;
   flex-wrap: wrap;
   background: #2d6a4f;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 #boxes .box {
   border: 1px solid #fff;
   width: 7.5rem;
   height: 7.5rem;
+  cursor: pointer;
+}
+
+.bomb {
+  background-color: #f00;
+}
+
+.number {
+  background-color: #0f0;
 }
 
 .switch {
   width: 15rem;
   height: 7rem;
-  background: #59c9a5;
+  background: #2d6a4f;
   border-radius: 5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   cursor: pointer;
 }
 
 .icon {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   text-align: center;
+  fill: #fff;
 }
 
 .switch div {
   margin: auto 0;
-  width: 6.7rem;
-  height: 6.7rem;
+  width: 5.7rem;
+  height: 5.7rem;
   border-radius: 5rem;
   padding: 1.1rem;
   transition: all 0.5s ease-out;
 }
 .switch div.active {
-  background-color: #fff;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+  background-color: #40916c;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .switch div.active .mine {
   fill: #d90429;
 }
 
 .switch div.active .flag {
-  fill: #4361ee;
+  fill: #003566;
 }
