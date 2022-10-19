@@ -18,7 +18,7 @@
   <body>
     <div class="container">
       <div class="game-info">
-        <h1 id="flagCount">010</h1>
+        <h1 id="mineCount">010</h1>
         <button id="reset-btn">
           <ion-icon class="reset-icon" name="refresh-outline"></ion-icon>
         </button>
@@ -51,15 +51,24 @@
         <div class="box"></div>
         <div class="box"></div>
       </div>
+    </div>
 
-      <div class="switch">
-        <div id="mine" class="active">
-          <ion-icon class="mine icon" name="settings"></ion-icon>
-        </div>
-        <div id="flag">
-          <ion-icon class="flag icon" name="flag"></ion-icon>
-        </div>
+    <div class="start-modal">
+      <div class="modal-header">
+        <h1 class="modal-title">Minesweeper game!</h1>
+        <h2>gg ez</h2>
       </div>
+      <label id="startGame" class="start-game-label">start game!</label>
+    </div>
+
+    <div class="game-over-modal game-over-modal-hidden">
+      <h1 class="modal-title">Game over!</h1>
+      <label id="resetGameOver" class="start-game-label">play again!</label>
+    </div>
+
+    <div class="you-win-modal you-win-modal-hidden">
+      <h1 class="modal-title">You win!</h1>
+      <label id="resetGameWin" class="start-game-label">play again!</label>
     </div>
 
     <script

@@ -17,12 +17,11 @@ body {
 
 .container {
   width: 37.5rem;
-  height: 100vh;
-  margin: auto;
+  margin: 4.4rem auto 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 3.2rem;
 }
 
 .game-info {
@@ -42,9 +41,9 @@ body {
 }
 
 .reset-icon {
-  font-size: 4rem;
+  font-size: 4.4rem;
   cursor: pointer;
-  color: #000022;
+  color: #fff;
 }
 
 #boxes {
@@ -60,48 +59,79 @@ body {
   width: 7.5rem;
   height: 7.5rem;
   cursor: pointer;
-}
 
-.bomb {
-  background-color: #f00;
-}
-
-.number {
-  background-color: #0f0;
-}
-
-.switch {
-  width: 15rem;
-  height: 7rem;
-  background: #2d6a4f;
-  border-radius: 5rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+.open-number {
+  font-size: 6.2rem;
+  color: #fff;
+}
+
+.open-mine {
+  font-size: 5.5rem;
+  color: #d90429;
+}
+
+.start-modal-hidden {
+  visibility: hidden;
+}
+
+.start-modal,
+.game-over-modal,
+.you-win-modal {
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  padding: 3.2rem;
+  width: 95%;
+  height: 95%;
+  background-color: #000;
+  border-radius: 1.2rem;
+  opacity: 0.95;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.game-over-modal-hidden {
+  display: none;
+}
+
+.you-win-modal-hidden {
+  display: none;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.modal-title {
+  color: #fff;
+  font-size: 6.2rem;
+}
+
+.start-modal h2 {
+  font-style: italic;
+  color: #fff;
+  font-size: 7.4rem;
+  text-transform: uppercase;
+}
+
+.start-game-label {
+  border: 2px solid #fff;
+  padding: 1.6rem;
+  border-radius: 1.2rem;
+  font-size: 4.4rem;
+  color: #fff;
   cursor: pointer;
 }
 
-.icon {
-  font-size: 3.5rem;
-  text-align: center;
-  fill: #fff;
-}
-
-.switch div {
-  margin: auto 0;
-  width: 5.7rem;
-  height: 5.7rem;
-  border-radius: 5rem;
-  padding: 1.1rem;
-  transition: all 0.5s ease-out;
-}
-.switch div.active {
-  background-color: #40916c;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.switch div.active .mine {
-  fill: #d90429;
-}
-
-.switch div.active .flag {
-  fill: #003566;
+.start-game-label:hover {
+  color: #000;
+  background-color: #fff;
 }
