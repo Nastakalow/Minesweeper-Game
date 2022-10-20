@@ -17,8 +17,9 @@ let openNumbersCount = 0;
 
 startGame.addEventListener("click", () => {
   startModal.classList.add("start-modal-hidden");
-  console.log(setMines());
+  setMines();
   setMinesCount();
+  showFlag();
 });
 
 resetBtn.addEventListener("click", resetGame);
@@ -79,17 +80,12 @@ function findMinesCount() {
 
   mineCount.innerHTML = c;
 
-  if (count >= 10) {
-    mineCount.innerHTML = "0" + count;
-  } else {
-    mineCount.innerHTML = "00" + count;
-  }
   return count;
 }
 
 function setMinesCount() {
   let count;
-  let minesCount = [];
+  let minesCountArr = [];
   for (let i = 0; i < boxes.length; i++) {
     count = false;
     if (!mines[i]) {
@@ -131,35 +127,44 @@ function setMinesCount() {
         }
       }
     }
-    minesCount.push(count);
+    minesCountArr.push(count);
   }
-  stickClickBox(minesCount);
+  stickClickBox(minesCountArr);
 }
 
-function stickClickBox(minesCount) {
+function stickClickBox(minesCountArr) {
   for (let i = 0; i < boxes.length; i++) {
     let box = boxes[i];
-    let mineCount = findMinesCount();
+    let minesCount = findMinesCount();
 
     box.addEventListener("click", (e) => {
-      if (minesCount[i] === false) {
-        showAllMines(minesCount);
+      if (minesCountArr[i] === false) {
+        showAllMines(minesCountArr);
         setTimeout(() => {
           gameOverModal.classList.remove("game-over-modal-hidden");
-        }, 300);
-      } else if (minesCount[i] !== 0) {
-        e.target.innerHTML = minesCount[i];
+        }, 500);
+      } else if (minesCountArr[i] !== 0) {
+        e.target.innerHTML = minesCountArr[i];
         e.target.classList.add("open-number");
-        showAllZeros(minesCount);
-        openNumbersCount++;
-        if (openNumbersCount == 25 - mineCount) {
+        showAllZeros(minesCountArr);
+        console.log(openNumbersCount++);
+        if (openNumbersCount == 25 - minesCount - showAllZeros(minesCountArr)) {
           setTimeout(() => {
             youWinModal.classList.remove("you-win-modal-hidden");
-          }, 300);
+          }, 500);
         }
       }
     });
   }
+}
+
+function showFlag() {
+  boxes.forEach((box) => {
+    box.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      box.innerHTML = "🚩";
+    });
+  });
 }
 
 function showAllMines(minesCount) {
@@ -173,9 +178,12 @@ function showAllMines(minesCount) {
 }
 
 function showAllZeros(minesCount) {
+  let zeroCount = 0;
   for (let i = 0; i < boxes.length; i++) {
     if (minesCount[i] === 0) {
+      zeroCount++;
       boxes[i].classList.add("open-zero");
     }
   }
+  return zeroCount;
 }

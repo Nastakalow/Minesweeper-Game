@@ -58,6 +58,7 @@ body {
   border: 1px solid #fff;
   width: 7.5rem;
   height: 7.5rem;
+  font-size: 4.4rem;
   cursor: pointer;
 
   display: flex;
@@ -66,13 +67,12 @@ body {
 }
 
 .open-number {
-  font-size: 6.2rem;
   color: #fff;
 }
 
 .open-mine {
   font-size: 5.5rem;
-  color: #d90429;
+  color: #f00;
 }
 
 .open-zero {
@@ -117,6 +117,17 @@ body {
 .modal-title {
   color: #fff;
   font-size: 6.2rem;
+}
+
+.help {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  border: 2px solid #fff;
+  border-radius: 1.2rem;
+  padding: 1.2rem;
+  font-size: 2.4rem;
+  color: #fff;
 }
 
 .start-modal h2 {
