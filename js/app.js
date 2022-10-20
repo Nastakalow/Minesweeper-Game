@@ -147,12 +147,15 @@ function stickClickBox(minesCount) {
         setTimeout(() => {
           gameOverModal.classList.remove("game-over-modal-hidden");
         }, 300);
-      } else {
+      } else if (minesCount[i] !== 0) {
         e.target.innerHTML = minesCount[i];
         e.target.classList.add("open-number");
+        showAllZeros(minesCount);
         openNumbersCount++;
         if (openNumbersCount == 25 - mineCount) {
-          youWinModal.classList.remove("you-win-modal-hidden");
+          setTimeout(() => {
+            youWinModal.classList.remove("you-win-modal-hidden");
+          }, 300);
         }
       }
     });
@@ -165,6 +168,14 @@ function showAllMines(minesCount) {
       boxes[
         i
       ].innerHTML = `<ion-icon class="open-mine" name="settings-sharp"></ion-icon>`;
+    }
+  }
+}
+
+function showAllZeros(minesCount) {
+  for (let i = 0; i < boxes.length; i++) {
+    if (minesCount[i] === 0) {
+      boxes[i].classList.add("open-zero");
     }
   }
 }

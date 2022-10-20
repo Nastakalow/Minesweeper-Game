@@ -75,6 +75,10 @@ body {
   color: #d90429;
 }
 
+.open-zero {
+  background-color: #1b4332;
+}
+
 .start-modal-hidden {
   visibility: hidden;
 }
