@@ -62,7 +62,7 @@ function startTime() {
 
 function setMines() {
   for (let i = 0; i < boxes.length; i++) {
-    let randomMine = Math.round(Math.random() * 2) == 0;
+    let randomMine = Math.round(Math.random() * 3) == 0;
     mines.push(randomMine);
   }
   return mines;
